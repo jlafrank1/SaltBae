@@ -47,17 +47,16 @@ app.post('/saltbae',(req,res)=>{
     if (err) {
       console.log(err);
     } else {
-      console.log(newProject);
-      res.redirect('/saltbae')
+      //needs work
+      res.redirect('/saltbae') //redirect to new id of new route
     }
   })
 })
 
 // Show route
 app.get('/saltbae/:id', (req, res)=> {
-  // res.send('Hitting send route at '+ req.params.id)
   let id = req.params.id
-  Projects.findById(id, (err, fountProject)=>{
+  Projects.findById(id, (err, foundProject)=>{
     if(err){
       res.send(err)
     } else{
@@ -93,6 +92,7 @@ app.get('/saltbae/:id/edit', (req, res)=>{
 // Put route
 app.put('/saltbae/:id', (req, res) => {
 	projects[req.params.id] = req.body
+  //needs work
 	res.redirect('/saltbae');
 })
 
