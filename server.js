@@ -6,13 +6,15 @@ const mongoose = require('mongoose');
 const db = mongoose.connection
 const Projects = require('./models/projects.js')
 const methodOverride = require('method-override');
+const bodyParser = require('body-parser');
+
 
 //MONGOOSE CONNECT
-mongoose.connect('mongodb://localhost:27017/projects', { useNewUrlParser: true});
+mongoose.connect('mongodb://localhost:27017/saltbae', { useNewUrlParser: true}, { useUnifiedTopology: true });
+
 db.once('open', ()=> {
     console.log('Connected to mongo');
 });
-
 
 //MIDDLEWARE
 app.use(express.static('public'))
@@ -47,8 +49,7 @@ app.post('/saltbae',(req,res)=>{
     if (err) {
       console.log(err);
     } else {
-      //needs work
-      res.redirect('/saltbae') //redirect to new id of new route
+      res.redirect('/saltbae')
     }
   })
 })
@@ -60,7 +61,7 @@ app.get('/saltbae/:id', (req, res)=> {
     if(err){
       res.send(err)
     } else{
-      res.render('show.ejs', {project: foundProject})
+      res.render('show.ejs', {project: foundProject, id: id})
     }
   })
 })
