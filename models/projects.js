@@ -8,7 +8,8 @@ const projectSchema = new mongoose.Schema ({
   },
   timer: {
     type: Number,
-    default: 25
+    default: 25,
+    required: true
   },
 }, {timestamps: true})
 

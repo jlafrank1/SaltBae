@@ -60,7 +60,7 @@ app.get('/saltbae/:id', (req, res)=> {
     if(err){
       res.send(err)
     } else{
-      res.render('show.ejs', {project: foundProject})
+      res.render('show.ejs', {project: foundProject, id: id})
     }
   })
 })
