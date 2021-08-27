@@ -7,6 +7,17 @@
         <title></title>
     </head>
     <body>
-Index
-      </body>
+      <h1>Projects Index</h1>
+      <ul>
+          <% projects.forEach(project => { %>
+              <li>
+                <a href="/saltbae/<%=project._id%>"><%= project.name%></a>
+                <form method="POST" action="/saltbae/<%=project._id%>?_method=DELETE">
+                <input type="submit" value="DELETE"/>
+              </form>
+            </li>
+             <% }) %>
+      </ul>
+     <a href="/fruits/new">Create New Fruit</a>
+    </body>
 </html>
