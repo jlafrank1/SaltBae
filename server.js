@@ -17,9 +17,9 @@ db.once('open', ()=> {
 });
 
 //MIDDLEWARE
+app.use(methodOverride('_method'))
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: false }));
-app.use(methodOverride('_method'))
 
 //ROUTES
 
@@ -44,7 +44,7 @@ app.get('/saltbae/new', (req, res) => {
 })
 
 // Post route
-app.post('/saltbae',(req,res)=>{
+app.post('/saltbae/:id',(req,res)=>{
   Projects.create(req.body, (err, newProject)=>{
     if (err) {
       console.log(err);
@@ -91,10 +91,14 @@ app.get('/saltbae/:id/edit', (req, res)=>{
 })
 
 // Put route
-app.put('/saltbae/:id', (req, res) => {
-	projects[req.params.id] = req.body
-  //needs work
-	res.redirect('/saltbae');
+app.put('/saltbae/:id', (req,res)=>{
+    Projects.findByIdAndUpdate(req.params.id, req.body, {new: true},(err)=>{
+        if(err){
+            res.send(err)
+        }else {
+            res.redirect('/saltbae')
+        }
+    })
 })
 
 app.listen(port, () => {

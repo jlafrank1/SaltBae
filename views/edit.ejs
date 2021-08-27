@@ -6,9 +6,9 @@
     <title>Edit</title>
   </head>
   <body>
-    <form action="/saltbae/<%=project._id%>/edit?_method=PUT" method="POST">
+    <form action="/saltbae/<%=project._id%>?_method=PUT" method="POST">
     <label for="name"><input type="text" name="name" required value="<%=project.name%>"></label>
-    <label for="timer">Timer: 25</label>
+    <label for="timer">Timer: <input type="text" name="timer" required value="<%=project.timer%>"></label>
     <input type="submit" name="submit" value="Submit">
   </form>
   </body>
