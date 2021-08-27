@@ -6,7 +6,7 @@ const projectSchema = new mongoose.Schema ({
     required: true,
     unique: true
   },
-  time: {
+  timer: {
     type: Number,
     default: 25
   },

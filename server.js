@@ -8,11 +8,10 @@ const Projects = require('./models/projects.js')
 const methodOverride = require('method-override');
 
 //MONGOOSE CONNECT
-mongoose.connect('mongodb://localhost:27017/projects', { useNewUrlParser: true});
+mongoose.connect('mongodb://localhost:27017/saltbae', { useNewUrlParser: true});
 db.once('open', ()=> {
     console.log('Connected to mongo');
 });
-
 
 //MIDDLEWARE
 app.use(express.static('public'))
@@ -47,7 +46,6 @@ app.post('/saltbae',(req,res)=>{
     if (err) {
       console.log(err);
     } else {
-      //needs work
       res.redirect('/saltbae') //redirect to new id of new route
     }
   })
