@@ -11,6 +11,7 @@ const bodyParser = require('body-parser');
 
 //MONGOOSE CONNECT
 mongoose.connect('mongodb://localhost:27017/saltbae', { useNewUrlParser: true}, { useUnifiedTopology: true });
+
 db.once('open', ()=> {
     console.log('Connected to mongo');
 });
