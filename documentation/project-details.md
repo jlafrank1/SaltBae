@@ -17,7 +17,7 @@ Full stack web application using [CRUD](https://www.codecademy.com/articles/what
 - Deployed with Heroku
 - Documentation
 
-Code is: ⚡︎ CLEAN ⚡︎ MODULAR ⚡︎ ORGANIZED ⚡︎ 
+***Code is: ⚡︎ CLEAN ⚡︎ MODULAR ⚡︎ ORGANIZED ⚡︎ !***
 
 
 ## PLANNING DELIVERABLES
