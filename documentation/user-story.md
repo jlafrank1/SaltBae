@@ -1,64 +1,48 @@
-# SaltBae PomoList
+# User Story
 
-Inspired by [https://pomofocus.io/](https://pomofocus.io/). 
+SaltBae is at its heart a simple pomodoro timer. What we thought would be a useful twist to that is the ability for a user to track how someone has used the pomodoro timers over a longer period of time. 
 
-> SaltBae: A pomodoro technique style project manager. Create a project with individually timed tasks, and a post-interview regarding how it went.
+## Account Creation
+> this may not be necessary for MVP but will at least be emulated with a default user account
 
-1. Follow Pomodoro best/popular practices. 
-2. Typical Pomo timer lists.
-3. Users can create "Pomo Projects"
-    1. (Custom || std set) of timers
-    2. Project Name
-4. Each Custom Timer...
-    1. Interview
-        1. Were you interrupted?
-        2. Was this useful?
-        3. Note (str)
-5. Statistics collection
-    1. one pomo db
-    2. each project is a sheet/collection within the db
-6. Statistics display
-    1. Show records
-        1. Standard project
-        2. Each custom project
-        3. Everything
+Interfacing with the app will start with creating or logging in with a user account. This allows usage tracking to remain private to the particular user.
 
-## Styling
+## Timers
+> For the sake of testing, these timers may be presented in seconds but converted later to minutes.
 
-- Floating cards, floating shadows
-- Bold pleasant colors
-- Use colors to indicate UI state
-- possibly TT font
-- Slick animations for card states
+Following general Pomodoro-style standards, the user will have three timers to choose from. We are setting these to preset times, with the option to allow the user to add one ore more custom time values.
+1. **Pomodoro timer**: 25 minutes
+2. **Long Break timer**: 15 minutes
+3. **Short Break timer**: 5 minutes
 
-**Technologies**
+After selecting a timer, the user will be presented with three sets of options:
+1. Play/Pause toggle
+   - This simply allows the user to pause a timer in progress.
+2. Stop button
+   - This lets the user stop a timer in progress, pushing forward to the interview.
+3. Tag Selection
+   - This is a simple list of checkboxes to tag a timer with basic descriptions of what they are doing.
+     - Included should be: 
+       - Work, Research, Meeting
+       - ProjectA, ProjectB, ProjectC
 
-Front end: 
+## Interview
+> The intent of the detailed timer selections and now the post-timer interview is to collect information for the user to refer to later to gauge how they are spending their time.
 
-HTML
+Some very brief interview options will be provided after a timer is either stopped or ends on its own. 
+- Was this useful? y/n
+- Were you interrupted? y/n
+- A small comment box for a text note.
 
-CSS
+These should be optional but nice to know. 
 
-Bootstrap
+## Post-Interview
+After the interview is completed, the information collected form both the timer page and subsequent interview will be stored in a "projects" db for later reference.
 
-Flexbox
+## Index/Show
+The user should be able to display a list of their timer history. 
 
-JavaScript
-
-Back end: 
-
-Node.JS
-
-Mongoose
-
-MongoDB
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ca561f09-4e99-417f-a200-996e4aaee7f5/Untitled.png)
-
-## Landing Page
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4b78ca29-13af-427b-83b8-8e76996452b3/Untitled.png)
-
+> outside of MVP: some data display and graphing options would be great here!
 
 ---
 [**HOME**](../README.md)
