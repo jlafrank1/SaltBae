@@ -17,3 +17,6 @@ The general flow, as described in the [user story page](user-story.md) should ad
 Our initial wireframe planning with general page layout and a generic design goal for each view page. Our goal is very quick to read with bold text and bright colors. A matching floating card style with rounded edges and drop shadows should help guide users between elements as needed. 
 
 <img src="docs-assets/wireframe-initial.png" alt="the man" style="width:800px;">
+
+---
+[**HOME**](../README.md)

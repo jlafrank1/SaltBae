@@ -31,3 +31,6 @@ See the [planning deliverables](https://git.generalassemb.ly/wc-seir-726/project
 -   A **Feasibility Check** for any bonus feature you'd like to complete.
 
 Once your project has been approved, create a **GitHub Repo** for your project and [add your teaching team as collaborators](https://help.github.com/articles/adding-collaborators-to-a-personal-repository/).
+
+---
+[**HOME**](../README.md)
