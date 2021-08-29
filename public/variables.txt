@@ -1,0 +1,7 @@
+Projects: projectSchema
+
+name: project name in projects.js Schema
+timer: time in minutes amount in project.js schema (default 25)
+
+/saltbae: index.ejs
+saltbae is also name of mongoDB (syntax: use saltbae, db.projects.find())
