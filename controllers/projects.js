@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Projects = require('../models/projects.js')
+const User = require('../models/User');
 
 //ROUTES
 
@@ -22,6 +23,10 @@ router.get('/new', (req, res) => {
   res.render('new.ejs')
 })
 
+router.get('/user/new', (req, res) => {
+  res.render('newUser.ejs')
+})
+
 // Post route
 router.post('/', (req,res) => {
   Projects.create(req.body, (err, newProject)=>{
@@ -32,6 +37,17 @@ router.post('/', (req,res) => {
     }
   })
 })
+
+router.post('/user', (req,res) => {
+  User.create(req.body, (err, newUser)=>{
+    if (err) {
+      console.log(err);
+    } else {
+      res.redirect('/saltbae')
+    }
+  })
+})
+
 
 // Show route
 router.get('/:id', (req, res)=> {
