@@ -6,10 +6,13 @@
         <link rel="stylesheet" href="/public/styles/style.css">
     </head>
     <body>
-        <%=project.name%><br>
-        <%=project.timer%>
-        <nav>
-          <a href="/saltbae/<%=id%>/edit">Edit</a><br>
-          <a href="/saltbae">Back to Index</a>
-        </nav>
+      <div class="container">
+         <h1><%=project.name%></h1>
+          <h2><%=project.timer%></h2>
+          <nav>
+            <a href="/saltbae/<%=id%>/edit">Edit</a><br>
+            <a href="/saltbae">Back to Index</a>
+          </nav>
+
+        </div>
       </body>

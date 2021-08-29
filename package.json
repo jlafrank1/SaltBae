@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/joulesoix/SaltBae#readme",
   "dependencies": {
+    "@tailwindcss/forms": "^0.3.3",
     "autoprefixer": "^10.3.3",
     "body-parser": "^1.19.0",
     "ejs": "^3.1.6",
