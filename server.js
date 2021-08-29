@@ -7,6 +7,7 @@ const db = mongoose.connection
 const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
 const projectsController = require('./controllers/projects.js');
+const path = require('path');
 
 //MONGOOSE CONNECT
 mongoose.connect('mongodb://localhost:27017/saltbae', { useNewUrlParser: true}, { useUnifiedTopology: true });
@@ -17,7 +18,8 @@ db.once('open', ()=> {
 
 //MIDDLEWARE
 app.use(methodOverride('_method'))
-app.use(express.static('public'))
+
+app.use('/public', express.static(path.join(__dirname, 'public')))
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.urlencoded({extended: true}))
 app.use('/saltbae', projectsController);

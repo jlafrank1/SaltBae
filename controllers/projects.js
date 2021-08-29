@@ -4,6 +4,8 @@ const Projects = require('../models/projects.js')
 
 //ROUTES
 
+// router.use(express.static('public', express.static(__dirname + '/public')));
+// router.use('/public', express.static(path.join(__dirname, 'public')))
 // Index route
 router.get('/', (req,res)=>{
     Projects.find({}, (err, allProjects)=>{
