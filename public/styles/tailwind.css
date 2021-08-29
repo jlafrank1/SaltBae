@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -10,23 +11,27 @@ body {
     padding: 0;
     margin: 0;
     width: 100vw;
-    font-family: 'Source Sans Pro', sans-serif;
+    /* font-family: 'Source Sans Pro', sans-serif; */
+    font-family: 'Heebo', sans-serif;
     @apply bg-blue-900
 }
 
 h1 {
-    @apply text-5xl;
+    @apply text-4xl mt-2;
 
     /* border: 5px solid red; */
 }
 h2 {
-    @apply text-4xl;
+    @apply text-2xl;
 }
 .container {
     @apply flex flex-col flex-nowrap min-w-full items-center justify-items-center;
     @apply lg:min-w-0 lg:w-1/2 lg:mx-auto mt-8;
     @apply text-gray-50 bg-blue-600 bg-opacity-30 border border-blue-900;
     @apply rounded-lg shadow-lg drop-shadow-lg;
+
+    animation-name: fadeIn;
+    animation-duration: 1s;
 
     /* background: blue;
     width: 100vw; */
@@ -61,7 +66,11 @@ input[type="submit"].delete-button {
 }
 
 li {
-    @apply flex flex-row items-center 
+    @apply flex flex-row items-center my-1 w-full lg:w-72 justify-between;
+}
+
+nav {
+    @apply text-center mb-2;
 }
 
 .delete-form {
@@ -86,4 +95,20 @@ input[type="text"].edit-input  {
 
 .create-project-link {
     @apply mb-2;
+}
+
+
+
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-200%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

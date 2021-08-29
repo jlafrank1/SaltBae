@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@500&display=swap');
+
 /*! tailwindcss v2.2.8 | MIT License | https://tailwindcss.com */
 
 /*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
@@ -32049,20 +32051,22 @@ body {
   padding: 0;
   margin: 0;
   width: 100vw;
-  font-family: 'Source Sans Pro', sans-serif;
+  /* font-family: 'Source Sans Pro', sans-serif; */
+  font-family: 'Heebo', sans-serif;
   --tw-bg-opacity: 1;
   background-color: rgba(30, 58, 138, var(--tw-bg-opacity))
 }
 
 h1 {
-  font-size: 3rem;
-  line-height: 1;
+  margin-top: 0.5rem;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   /* border: 5px solid red; */
 }
 
 h2 {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .container {
@@ -32097,6 +32101,10 @@ h2 {
   --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   --tw-drop-shadow: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04)) drop-shadow(0 4px 3px rgba(0, 0, 0, 0.1));
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
   /* background: blue;
     width: 100vw; */
 }
@@ -32155,9 +32163,24 @@ input[type="submit"].delete-button {
 }
 
 li {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
   display: flex;
+  width: 100%;
   flex-direction: row;
-  align-items: center
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 1024px){
+  li{
+    width: 18rem;
+  }
+}
+
+nav {
+  margin-bottom: 0.5rem;
+  text-align: center;
 }
 
 .delete-form {
@@ -32185,6 +32208,30 @@ input[type="text"].edit-input  {
 
 .create-project-link {
   margin-bottom: 0.5rem;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-200%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-200%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (min-width: 640px){
