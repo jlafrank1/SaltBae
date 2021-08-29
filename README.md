@@ -6,20 +6,23 @@ GA726 08-2021
 
 <img src="documentation/docs-assets/saltbaeclassic-cutout.png" alt="the man" style="width:200px;">
 
-- An slick interface that stays out of your way.
-- Track your session history.
-
+- *A slick interface that stays out of your way!*
+- *Track your session history!*
+---
 ## Team SaltBae: 
 
 - [Alexv Alves](https://github.com/alxalves)
 - [Julia Silver](https://github.com/joulesoix)
 - [Jay Thurber](https://github.com/jthurber87)
-
+---
 
 ## Project Details
 - [Project Details](/documentation/project-details.md)
-- [User Story](/documentation/user-story.md)
 - [Some information on Pomodoro](/documentation/about-pomodoro.md)
+- [User Story](/documentation/user-story.md)
+- [Wireframe, Framework, & Styling](documentation/framework-styling.md)
+- [Code details](documentation/code-details.md)
+- [Styling details](documentation/styling-details.md)
 
 ---
 ## Inspiration Credits:
