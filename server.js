@@ -12,7 +12,7 @@ const projectsController = require('./controllers/projects.js');
 const path = require('path');
 
 //MONGOOSE CONNECT
-mongoose.connect('mongodb://localhost:27017/saltbae', { useNewUrlParser: true}, { useUnifiedTopology: true });
+mongoose.connect(process.env.MONGODBURI, { useNewUrlParser: true}, { useUnifiedTopology: true });
 
 db.once('open', ()=> {
     console.log('Connected to mongo');
