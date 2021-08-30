@@ -1,5 +1,7 @@
 const express = require('express');
+const bcrypt = require('bcrypt');
 const router = express.Router();
+// const module = require('module');
 const Projects = require('../models/projects.js')
 const User = require('../models/User');
 
@@ -9,11 +11,12 @@ const User = require('../models/User');
 // router.use('/public', express.static(path.join(__dirname, 'public')))
 // Index route
 router.get('/', (req,res)=>{
+  console.log('current user: ' , req.session.currentUser)
     Projects.find({}, (err, allProjects)=>{
         if(err){
             res.send(err)
         }else {
-            res.render('index.ejs', {projects: allProjects})
+            res.render('index.ejs', {projects: allProjects, currentUser: req.session.currentUser || ""})
         }
     })
 })
@@ -23,8 +26,8 @@ router.get('/new', (req, res) => {
   res.render('new.ejs')
 })
 
-router.get('/user/new', (req, res) => {
-  res.render('newUser.ejs')
+router.get('/login', (req, res) => {
+  res.render('login.ejs')
 })
 
 // Post route
