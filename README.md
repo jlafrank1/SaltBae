@@ -4,7 +4,7 @@ GA726 08-2021
 
 > ***A 'salty' pomodoro-style app that you will want to use.***
 
-<img src="documentation/docs-assets/saltbaeclassic-cutout.png" alt="the man" style="width:200px;">
+<img src="documentation/docs-assets/../../public/assets/saltbae1-cutout1.png" alt="the man" style="width:200px;">
 
 - *A slick interface that stays out of your way!*
 - *Track your session history!*
