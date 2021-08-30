@@ -38,6 +38,8 @@ router.get('/login', (req, res) => {
 
 // Post route
 router.post('/', (req,res) => {
+  let currentUser = req.session.currentUser._id
+  req.body.user = currentUser
   Projects.create(req.body, (err, newProject)=>{
     if (err) {
       console.log(err);
