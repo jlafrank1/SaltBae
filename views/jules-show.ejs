@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="/public/styles/style.css">
+</head>
+<body>
+<div class="container">
+    <h1><%=project.name%></h1>
+    <h2 id="time">25:00</h2>
+
+
+    <button type="button" name="pause" onclick="pauseToggle()">Play/Pause</button>
+
+
+    <nav>
+        <a href="/saltbae/<%=id%>/edit">Edit</a><br>
+        <a href="/saltbae">Back to Index</a>
+    </nav>
+</div>
+<script type="text/javascript">
+    let pause = false
+    function startTimer(duration, display, pause) {
+        var timer = duration, minutes, seconds;
+        if (pause == true) {
+            display = document.querySelector('#time')
+        } else {
+        setInterval(function () {
+            minutes = parseInt(timer / 60, 10);
+            seconds = parseInt(timer % 60, 10);
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            display.textContent = minutes + ":" + seconds;
+
+            if (--timer < 0) {
+                timer = duration;
+            }
+        }, 1000);}
+    }
+
+    window.onload = function () {
+        var pomoTimer = 60 * 25, // NOT UPDATED WITH NEW VARIABLE FROM MODEL
+            display = document.querySelector('#time');
+        startTimer(pomoTimer, display, false);
+    };
+
+
+    // note current timer value: document.querySelector('#time')
+    // if startTimer is running, pause
+    // if startTimer is paused, run it again - noted timer value
+
+
+    pauseToggle = (currentTime) => {
+        var currentTime = document.querySelector('#time')
+        if (pause == false){
+            pause = true
+        } else{
+            // insert conversion from currentTime into something that 'display' input to startTimer fn above can read
+            startTimer(currentTime, display, pause); // !!!! "display" here needs to be converted from currentTime val
+        }
+    }
+</script>
+</body>
+</html>
