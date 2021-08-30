@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/public/styles/style.css">
+    <!-- <script src="app.js" charset="utf-8"></script> -->
+    <title></title>
+</head>
+<body>
+  <div>
+  <a href="/saltbae">Home</a>
+  <a href="/saltbae/history">History</a>
+  <a href="/saltbae/login">Login</a>
+  </div>
+<div class="container">
+    <h1>Projects History</h1>
+    <ul class="projects-list">
+        <% projects.forEach(project => { %>
+        <li>
+            <div>
+            <a class="project-title" href="/saltbae/<%=project._id%>"><%= project.name%></a>
+
+                <div font-size="12px"><%=project.createdAt%></div>
+                <form class="delete-form" method="POST" action="/saltbae/<%=project._id%>?_method=DELETE">
+                <input type="submit" value="DELETE" class="delete-button" />
+                </form>
+                <br>
+            </div>
+        </li>
+        <% }) %>
+    </ul>
+
+</div>
+</body>
+</html>

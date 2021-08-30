@@ -29,11 +29,28 @@ router.get('/login', (req, res) => {
   res.render('login.ejs')
 })
 
+// History
+router.get('/history', (req,res)=>{
+    let currentUser = req.session.currentUser
+    if (currentUser) {
+        Projects.find({user: currentUser._id}, (err, allProjects)=>{
+            if(err){
+                res.send(err)
+            }else {
+                res.render('history.ejs', {projects: allProjects, currentUser})
+            }
+        })
+    } else {
+        res.redirect('/saltbae/login')
+    }
+})
+
 // NEW
 
 //Project
 router.get('/new', (req, res) => {
-  res.render('new.ejs')
+  let currentUser = req.session.currentUser
+  res.render('new.ejs', {currentUser})
 })
 
 //User
@@ -98,11 +115,12 @@ router.post('/login', ( req, res )=> {
 // SHOW
 router.get('/:id', (req, res)=> {
   let id = req.params.id
+  let currentUser = req.session.currentUser
   Projects.findById(id, (err, foundProject)=>{
     if(err){
       res.send(err)
     } else{
-      res.render('show.ejs', {project: foundProject, id: id})
+      res.render('show.ejs', {project: foundProject, id: id, currentUser})
     }
   })
 })
@@ -113,7 +131,7 @@ router.delete('/:id', (req, res) => {
       if (err) {
         res.send(err)
       } else {
-        res.redirect('/saltbae')
+        res.redirect('/saltbae/history')
       }
     })
 })
@@ -131,8 +149,19 @@ router.get('/:id/edit', (req, res)=>{
 })
 
 // PUT / Exit interview submit
-router.put('/:id', (req,res)=>{
-    Projects.findByIdAndUpdate(req.params.id, req.body, {new: true},(err)=>{
+router.put('/:id/interview', (req,res)=>{
+  let id = req.params.id
+  if (req.body.useful === 'on') {
+    req.body.useful = true
+  } else {
+    req.body.useful = false
+  }
+  if (req.body.interrupted === 'on') {
+    req.body.interrupted = true
+  } else {
+    req.body.interrupted = false
+  }
+    Projects.findByIdAndUpdate(id, {interview: req.body}, {new: true},(err)=>{
         if(err){
             res.send(err)
         }else {

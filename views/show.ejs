@@ -8,7 +8,9 @@
     <body>
       <div class="container">
          <h1><%=project.name%></h1>
-          <h2 id="time">25:00</h2>
+          <h2 id="time"></h2>
+          <button type="button" name="pause" onclick="location.href = '/saltbae/<%=project._id%>/edit'">Pause</button>
+          <button type="button" name="stop" onclick="location.href = '/saltbae/<%=project._id%>/edit'">Stop</button>
             <nav>
             <a href="/saltbae/<%=id%>/edit">Edit</a><br>
             <a href="/saltbae">Back to Index</a>
@@ -32,7 +34,7 @@
         }
 
         window.onload = function () {
-            var pomoTimer = 60 * 25,
+            var pomoTimer = 60 * <%=project.timer%>,
             display = document.querySelector('#time');
             startTimer(pomoTimer, display);
         };

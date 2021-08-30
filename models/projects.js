@@ -4,16 +4,25 @@ const projectSchema = new mongoose.Schema ({
   name: {
     type: String,
     required: true,
-    unique: true
   },
   timer: {
     type: Number,
-    default: 25,
     required: true
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
+  },
+  interview: {
+    useful: {
+      type: Boolean
+    },
+    interrupted: {
+      type: Boolean
+    },
+    comments: {
+      type: String
+    }
   }
 }, {timestamps: true})
 
