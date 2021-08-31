@@ -6,11 +6,48 @@
         <link rel="stylesheet" href="/public/styles/style.css">
     </head>
     <body>
+                <div class="header">
+                    <div>
+                        <a class="header-link" href="/saltbae/"> Home </a>
+                        <a class="header-link" href="/saltbae/new"> New </a>
+                        <a class="header-link" href="/saltbae/history"> Archive </a>
+                
+                    </div>
+                    <%=currentUser.userName%>
+                </div>
       <div class="container">
-         <h1><%=project.name%></h1>
+         
           <h2 id="time"></h2>
-          <button type="button" name="pause" onclick="location.href = '/saltbae/<%=project._id%>/edit'">Pause</button>
-          <button type="button" name="stop" onclick="location.href = '/saltbae/<%=project._id%>/edit'">Stop</button>
+        <h1 class="project-name">
+            <%=project.name%>
+        </h1>
+
+        <div class="controls-container">
+          <button class="controls" type="button" name="pause" onclick="location.href = '/saltbae/<%=project._id%>/edit'">
+            
+            
+            <!--Pause SVG-->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z"
+                    clip-rule="evenodd" />
+            </svg>
+            <span>Pause</span>
+        </button>
+          <button class="controls" type="button" name="stop" onclick="location.href = '/saltbae/<%=project._id%>/edit'">
+            
+            <!--Stop SVG-->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8 7a1 1 0 00-1 1v4a1 1 0 001 1h4a1 1 0 001-1V8a1 1 0 00-1-1H8z"
+                    clip-rule="evenodd" />
+            </svg>
+            <span>Stop </span>
+        
+        </button>
+
+        </div>
+        <br>
             <nav>
             <a href="/saltbae/<%=id%>/edit">Edit</a><br>
             <a href="/saltbae">Back to Index</a>

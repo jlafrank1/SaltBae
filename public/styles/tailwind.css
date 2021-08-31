@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -24,6 +24,24 @@ h1 {
 h2 {
     @apply text-2xl;
 }
+.header {
+    @apply flex flex-row items-center justify-between h-12 px-2;
+    @apply lg:min-w-0 lg:w-1/2 lg:mx-auto mt-8;
+    @apply text-gray-50 bg-blue-600 bg-opacity-30 border border-blue-900 font-bold;
+    @apply rounded-lg shadow-lg drop-shadow-lg;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+}
+
+.tasks { 
+
+    @apply flex flex-row items-center justify-around w-full mt-2;
+}
+
+
+a.header-link {
+    @apply bg-gray-50 text-blue-500 px-2 py-1.5 rounded mr-2 no-underline;
+}
 .container {
     @apply flex flex-col flex-nowrap min-w-full items-center justify-items-center;
     @apply lg:min-w-0 lg:w-1/2 lg:mx-auto mt-8;
@@ -35,6 +53,19 @@ h2 {
 
     /* background: blue;
     width: 100vw; */
+}
+
+.controls-container {
+    /* border: 1px solid red; */
+    @apply flex flex-row items-center justify-center w-full mt-3;
+}
+
+.controls-container > * {
+    @apply mx-2;
+}
+
+.interview-text {
+    @apply w-full bg-blue-200 rounded-md;
 }
 
 a {
@@ -61,12 +92,33 @@ input[type="submit"] {
     @apply -mb-4;
 }
 
+h1.project-name {
+    @apply text-2xl font-bold;
+}
+
+#time {
+    @apply text-6xl font-bold mt-2;
+}
+.controls {
+    @apply flex flex-row items-center;
+    @apply bg-green-500 hover:bg-green-400 rounded p-2;
+}
+
+.controls > * {
+    @apply mx-0.5;
+}
+input.task-button {
+    @apply text-xl px-4 py-4;
+}
+
 input[type="submit"].delete-button {
     @apply py-0.5 
 }
 
 li {
-    @apply flex flex-row items-center my-1 w-full lg:w-72 justify-between;
+   
+    @apply flex flex-row items-center my-1 w-full lg:w-72 justify-center;
+    
 }
 
 nav {
@@ -87,6 +139,11 @@ nav {
 
 input[type="text"].edit-input  {
     @apply -mb-0;
+}
+
+input[type="checkbox"].edit-input {
+    @apply bg-blue-400 rounded-sm;
+    border: 1px solid white;
 }
 
 .edit-project-submit-button {

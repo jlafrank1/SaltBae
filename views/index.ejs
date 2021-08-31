@@ -8,14 +8,22 @@
     </head>
     <body>
 
-      <h4><%=currentUser.userName%>!</h4>
+
+        <div class="header"> 
+          <div>
+            <a class="header-link" href="/saltbae/"> Home </a>
+            <a class="header-link" href="/saltbae/new"> New </a>
+            <a class="header-link" href="/saltbae/history"> Archive </a>
+
+          </div>
+          <%=currentUser.userName%>
+        </div>
         <div class="container">
         <h1>Projects Index</h1>
         <ul class="projects-list">
             <% projects.forEach(project => { %>
                 <li>
                   <a class="project-title" href="/saltbae/<%=project._id%>"><%= project.name%></a>
-                </form>
               </li>
               <% }) %>
         </ul>

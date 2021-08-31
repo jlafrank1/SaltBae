@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap');
 
 /*! tailwindcss v2.2.8 | MIT License | https://tailwindcss.com */
 
@@ -32069,6 +32069,69 @@ h2 {
   line-height: 2rem;
 }
 
+.header {
+  display: flex;
+  height: 3rem;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 1024px){
+  .header{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    min-width: 0px;
+  }
+}
+
+.header{
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(30, 58, 138, var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgba(37, 99, 235, var(--tw-bg-opacity));
+  --tw-bg-opacity: 0.3;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgba(249, 250, 251, var(--tw-text-opacity));
+  border-radius: 0.5rem;
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  --tw-drop-shadow: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04)) drop-shadow(0 4px 3px rgba(0, 0, 0, 0.1));
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.tasks {
+  margin-top: 0.5rem;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+a.header-link {
+  margin-right: 0.5rem;
+  border-radius: 0.25rem;
+  --tw-bg-opacity: 1;
+  background-color: rgba(249, 250, 251, var(--tw-bg-opacity));
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+  --tw-text-opacity: 1;
+  color: rgba(59, 130, 246, var(--tw-text-opacity));
+  text-decoration: none;
+}
+
 .container {
   display: flex;
   min-width: 100%;
@@ -32107,6 +32170,28 @@ h2 {
           animation-duration: 1s;
   /* background: blue;
     width: 100vw; */
+}
+
+.controls-container {
+  /* border: 1px solid red; */
+  margin-top: 0.75rem;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.controls-container > * {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.interview-text {
+  width: 100%;
+  border-radius: 0.375rem;
+  --tw-bg-opacity: 1;
+  background-color: rgba(191, 219, 254, var(--tw-bg-opacity));
 }
 
 a:hover{
@@ -32157,6 +32242,51 @@ input[type="submit"]{
   margin-bottom: -1rem;
 }
 
+h1.project-name {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
+#time {
+  margin-top: 0.5rem;
+  font-size: 3.75rem;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 0.25rem;
+  --tw-bg-opacity: 1;
+  background-color: rgba(16, 185, 129, var(--tw-bg-opacity));
+}
+
+.controls:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgba(52, 211, 153, var(--tw-bg-opacity));
+}
+
+.controls{
+  padding: 0.5rem;
+}
+
+.controls > * {
+  margin-left: 0.125rem;
+  margin-right: 0.125rem;
+}
+
+input.task-button {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 input[type="submit"].delete-button {
   padding-top: 0.125rem;
   padding-bottom: 0.125rem
@@ -32169,7 +32299,7 @@ li {
   width: 100%;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 @media (min-width: 1024px){
@@ -32199,6 +32329,13 @@ nav {
 
 input[type="text"].edit-input  {
   margin-bottom: 0px;
+}
+
+input[type="checkbox"].edit-input {
+  border-radius: 0.125rem;
+  --tw-bg-opacity: 1;
+  background-color: rgba(96, 165, 250, var(--tw-bg-opacity));
+  border: 1px solid white;
 }
 
 .edit-project-submit-button {

@@ -94,6 +94,7 @@ router.post('/register', ( req, res )=> {
 
 // Login
 router.post('/login', ( req, res )=> {
+
     User.findOne({userId: req.body.userId}, ((err, foundUser)=> {
         if (err) {
             res.send(err)
@@ -102,9 +103,11 @@ router.post('/login', ( req, res )=> {
                 res.redirect('/saltbae/login')
             } else {
                 if (bcrypt.compareSync(req.body.password, foundUser.password)) {
+                    // console.log('user found, setting session')
                     req.session.currentUser = foundUser
                     res.redirect('/saltbae')
                 } else {
+                    // console.log('no user found')
                     res.redirect('/saltbae/login')
                 }
             }
