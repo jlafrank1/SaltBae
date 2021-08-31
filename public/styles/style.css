@@ -32052,7 +32052,8 @@ body {
   margin: 0;
   width: 100vw;
   /* font-family: 'Source Sans Pro', sans-serif; */
-  font-family: 'Heebo', sans-serif;
+  /* font-family: 'Heebo', sans-serif; */
+  font-family: 'Nunito', sans-serif;
   --tw-bg-opacity: 1;
   background-color: rgba(30, 58, 138, var(--tw-bg-opacity))
 }
@@ -32250,7 +32251,7 @@ h1.project-name {
 
 #time {
   margin-top: 0.5rem;
-  font-size: 3.75rem;
+  font-size: 8rem;
   line-height: 1;
   font-weight: 700;
 }
