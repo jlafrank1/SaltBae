@@ -9,10 +9,16 @@
     <div class="container">
       <h1>Interview</h1>
       <form action="/saltbae/<%=project._id%>/interview?_method=PUT" method="POST" class="edit-project">
-        <label for="useful">Was this useful? <input class="edit-input" type="checkbox" name="useful"></label>
-        <label for="interrupted">Were you interrupted?   <input class="edit-input" type="checkbox" name="interrupted"></label>
+
+        <div>
+        <input class="edit-input" type="checkbox" name="useful"> <label for="useful">Was this useful?</label> 
+        </div>
+        <div>
+        <input class="edit-input" type="checkbox" name="interrupted">  <label for="interrupted">Were you interrupted?</label> 
+        </div>
+        
         <label for="comments">Comments:</label>
-        <textarea name="comments" rows="8" cols="80" maxlength="200" placeholder="200 char max" style="color: black"></textarea>
+        <textarea class="interview-text"  name="comments"  rows="8" cols="50"  maxlength="200" placeholder="200 char max" style="color: black"></textarea>
         <input class="edit-project-submit-button" type="submit" name="submit" value="Submit">
       </form>
     </div>

@@ -6,25 +6,39 @@
     <link rel="stylesheet" href="/public/styles/style.css">
   </head>
   <body>
-
+        <div class="header">
+          <div>
+            <a class="header-link" href="/saltbae/"> Home </a>
+            <a class="header-link" href="/saltbae/new"> New </a>
+            <a class="header-link" href="/saltbae/history"> Archive </a>
+        
+          </div>
+          <%=currentUser.userName%>
+        </div>
     <div class="container">
-    <h1>New</h1>
-    <form action="/saltbae" method="post" class="new-project">
-      <input type="text" name="name" value="Pomodoro" hidden> <br>
-      <input type="text" name="timer" value="25" hidden> <br>
-      <input type="submit" value="Pomodoro" />
-    </form>
-    <form action="/saltbae" method="post" class="new-project">
-      <input type="text" name="name" value="Short Break" hidden> <br>
-      <input type="text" name="timer" value="5" hidden> <br>
-      <input type="submit" value="Short Break" />
-    </form>
-    <form action="/saltbae" method="post" class="new-project">
-      <input type="text" name="name" value="Long Break" hidden> <br>
-      <input type="text" name="timer" value="15" hidden> <br>
-      <input type="submit" value="Long Break" />
-    </form>
+    <h1>New Project: </h1>
+    <div class="tasks">
+        <form action="/saltbae" method="post" class="new-project">
+          <input type="text" name="name" value="Pomodoro" hidden>
+          <input type="text" name="timer" value="25" hidden>
+          <input class="task-button" type="submit" value="Pomodoro" />
+        </form>
+        <form action="/saltbae" method="post" class="new-project">
+          <input type="text" name="name" value="Short Break" hidden>
+          <input type="text" name="timer" value="5" hidden>
+          <input class="task-button" type="submit" value="Short Break" />
+        </form>
+        <form action="/saltbae" method="post" class="new-project">
+          <input type="text" name="name" value="Long Break" hidden>
+          <input type="text" name="timer" value="15" hidden>
+          <input class="task-button" type="submit" value="Long Break" />
+        </form>
+    </div>
+    <br>
     <a href="/saltbae">Cancel</a>
+
+    <br>
+
     </div>
   </body>
 </html>

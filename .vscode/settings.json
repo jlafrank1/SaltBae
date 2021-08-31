@@ -1,0 +1,13 @@
+{
+    "emeraldwalk.runonsave": {
+        "commands": [
+            {
+                "match": "tailwind.css",
+                "isAsync": true,
+                "cmd": "npm run tailwind:css"
+            },
+        ]
+    
+    
+    }
+}
