@@ -6,6 +6,15 @@
     <title>Edit</title>
   </head>
   <body>
+        <div class="header">
+          <div>
+            <a class="header-link" href="/saltbae/"> Home </a>
+            <a class="header-link" href="/saltbae/new"> New </a>
+            <a class="header-link" href="/saltbae/history"> Archive </a>
+        
+          </div>
+          Hi, <%=currentUser.userName%>
+        </div>
     <div class="container">
       <h1>Interview</h1>
       <form action="/saltbae/<%=project._id%>/interview?_method=PUT" method="POST" class="edit-project">
