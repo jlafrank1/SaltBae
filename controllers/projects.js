@@ -141,12 +141,16 @@ router.delete('/:id', (req, res) => {
 
 // EDIT / Exit interview
 router.get('/:id/edit', (req, res)=>{
+  // console.log(req.session.currentUser);
+  
+  // console.log(currentUser);
   let id = req.params.id
   Projects.findById(id, (err, foundProject)=>{
     if (err) {
       res.send(err)
     } else {
-      res.render('edit.ejs', {project: foundProject})
+      let currentUser = req.session.currentUser
+      res.render('edit.ejs', {project: foundProject, currentUser })
     }
   })
 })
