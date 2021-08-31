@@ -15,27 +15,34 @@
       Hi, <%=currentUser.userName%>
     </div>
     <div class="container">
-    <h1>New Project: </h1>
+    <h1>New Timer: </h1>
     <div class="tasks">
         <form action="/saltbae" method="post" class="new-project">
           <input type="text" name="name" value="Pomodoro" hidden>
           <input type="text" name="timer" value="25" hidden>
-          <input class="task-button" type="submit" value="Pomodoro" />
+          <input class="task-button" type="submit" value="Pomodoro (25m)" />
         </form>
         <form action="/saltbae" method="post" class="new-project">
           <input type="text" name="name" value="Short Break" hidden>
           <input type="text" name="timer" value="5" hidden>
-          <input class="task-button" type="submit" value="Short Break" />
+          <input class="task-button" type="submit" value="Short Break (5m)" />
         </form>
         <form action="/saltbae" method="post" class="new-project">
           <input type="text" name="name" value="Long Break" hidden>
           <input type="text" name="timer" value="15" hidden>
-          <input class="task-button" type="submit" value="Long Break" />
+          <input class="task-button" type="submit" value="Long Break (15m)" />
         </form>
     </div>
     <br>
-    <br>
 
+    </div>
+    <div class="container">
+      <br>
+      <h2>The Pomodoro Technique:</h2>
+      <br>
+      <p style="margin-left:8%; margin-right:8%; font-size:1em">The Pomodoro Technique is a time management method developed by Francesco Cirillo in the late 1980s. It uses a timer to break work into intervals, traditionally 25 minutes in length, separated by short breaks. Each interval is known as a pomodoro, from the Italian word for 'tomato', after the tomato-shaped kitchen timer Cirillo used as a university student.
+The technique has been widely popularized by dozens of apps and websites providing timers and instructions. Closely related to concepts such as timeboxing and iterative and incremental development used in software design, the method has been adopted in pair programming contexts.</p>
+      <br>
     </div>
   </body>
 </html>
