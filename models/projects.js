@@ -14,15 +14,15 @@ const projectSchema = new mongoose.Schema ({
     ref: 'User'
   },
   interview: {
-    useful: {
-      type: Boolean
-    },
-    interrupted: {
-      type: Boolean
-    },
-    comments: {
-      type: String
-    }
+      useful: {
+        type: Boolean
+      },
+      interrupted: {
+        type: Boolean
+      },
+      comments: {
+        type: String
+      }
   }
 }, {timestamps: true})
 

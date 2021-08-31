@@ -2,7 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap');
 
-/*! tailwindcss v2.2.8 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v2.2.9 | MIT License | https://tailwindcss.com */
 
 /*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
@@ -32236,7 +32236,7 @@ input[type="submit"]{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  justify-items: start;
+  justify-content: space-between;
 }
 
 .new-project input[type="text"], .edit-project input[type="text"] {

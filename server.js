@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 const db = mongoose.connection
 const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
-const projectsController = require('./controllers/projects.js');
+const projectsController = require('./controllers/router.js');
 const path = require('path');
 
 //MONGOOSE CONNECT

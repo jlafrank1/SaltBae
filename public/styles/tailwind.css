@@ -34,7 +34,7 @@ h2 {
     animation-duration: 1s;
 }
 
-.tasks { 
+.tasks {
 
     @apply flex flex-row items-center justify-around w-full mt-2;
 }
@@ -70,7 +70,7 @@ a.header-link {
 }
 
 a {
-    @apply underline hover:text-purple-400 
+    @apply underline hover:text-purple-400
 }
 
 input[type="text"], input[type="submit"] {
@@ -86,7 +86,7 @@ input[type="submit"] {
 }
 
 .new-project, .edit-project {
-    @apply flex flex-col justify-items-start justify-center mt-2;
+    @apply flex flex-col justify-between justify-center mt-2;
 }
 
 .new-project input[type="text"], .edit-project input[type="text"] {
@@ -113,13 +113,13 @@ input.task-button {
 }
 
 input[type="submit"].delete-button {
-    @apply py-0.5 
+    @apply py-0.5
 }
 
 li {
-   
+
     @apply flex flex-row items-center my-1 w-full lg:w-72 justify-center;
-    
+
 }
 
 nav {
@@ -127,7 +127,7 @@ nav {
 }
 
 .delete-form {
-    @apply ml-2 
+    @apply ml-2
 }
 
 .project-title {

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/public/styles/style.css">
+        <!-- <script src="app.js" charset="utf-8"></script> -->
+        <title></title>
+    </head>
+    <body>
+
+
+        <div class="header"> 
+          <div>
+            <a class="header-link" href="/saltbae/"> Home </a>
+            <a class="header-link" href="/saltbae/new"> New </a>
+            <a class="header-link" href="/saltbae/history"> Archive </a>
+          </div>
+          Hi, <%=currentUser.userName%>
+        </div>
+        <div class="container">
+        <h1>Projects Index</h1>
+        <ul class="projects-list">
+            <% projects.forEach(project => { %>
+                <li>
+                  <a class="project-title" href="/saltbae/<%=project._id%>"><%= project.name%></a>
+              </li>
+              <% }) %>
+        </ul>
+        <a class="create-project-link" href="/saltbae/new">Create New Project</a>
+
+
+
+    </div>
+
+    </body>
+</html>

@@ -12,13 +12,11 @@
         <div class="header">
             <div>
                 <a class="header-link" href="/saltbae/"> Home </a>
-                <a class="header-link" href="/saltbae/new"> New </a>
-                <a class="header-link" href="/saltbae/history"> Archive </a>
-        
+                <a class="header-link" href="/saltbae/archive"> Archive </a>
+
             </div>
             Hi, <%=currentUser.userName%>
         </div>
-        Hi, <%=currentUser.userName%>
     </div>
 <div class="container">
     <h1>Projects History</h1>
@@ -27,8 +25,12 @@
         <li>
             <div>
             <a class="project-title" href="/saltbae/<%=project._id%>"><%= project.name%></a>
-
-                <div font-size="12px"><%=project.createdAt%></div>
+                <div font-size="14px">Created on <%=project.createdAt%></div>
+                <div font-size="12px">
+                <p>Useful? <% if (project.interview.useful === true){%> ✅ <%} else {%> ❌ <%}%> </p>
+                <p>Interrupted? <% if (project.interview.interrupted === true){%> ✅ <%} else {%> ❌ <%}%> </p>
+                <p>Comments: <%=project.interview.comments%>
+                </div>
                 <form class="delete-form" method="POST" action="/saltbae/<%=project._id%>?_method=DELETE">
                 <input type="submit" value="DELETE" class="delete-button" />
                 </form>
