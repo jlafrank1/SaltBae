@@ -35,9 +35,18 @@ GA726 08-2021
 # Node Configuration
 *for m1 mac desktop environments*
 
-*copy the following shell input and paste into your terminal to recover local node modules*
+*copy the following shell input notes and paste into your terminal to recover local node modules and remove them from the repo*
 
 ```sh
+# remove node modules from your local repo
+git rm -r node_modules
+```
+
+
+```sh
+# re-install node modules into your project (that you're using)
+# saltBae's modules:
+
 npm init -y
 npm install \
     tailwindcss \
@@ -54,4 +63,42 @@ npm install \
     postcss \
     postcss-cli \
     tailwindcss
+```
+
+
+```sh
+# example removal of other common junk files
+# take care!
+git rm -r .DS_Store
+git rm -r .vscode
+```
+
+[reference source](https://gist.github.com/subfuzion/db7f57fff2fb6998a16c)
+example global gitignore file:
+```sh
+# Node
+npm-debug.log
+node_modules
+
+# env
+.env
+
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# WebStorm
+.idea/
+
+# vi
+*~
+
+# General
+log/
+*.log
+
+# VS Code
+.vscode
 ```
