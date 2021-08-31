@@ -35,21 +35,23 @@ GA726 08-2021
 # Node Configuration
 *for m1 mac desktop environments*
 
+*copy the following shell input and paste into your terminal to recover local node modules*
+
 ```sh
-npm init
-npm install 
-    tailwindcss 
-    autoprefixer 
-    bcrypt 
-    body-parser 
-    debug 
-    dotenv 
-    ejs 
-    express 
-    express-session 
-    method-override 
-    mongoose 
-    postcss 
-    postcss-cli 
+npm init -y
+npm install \
+    tailwindcss \
+    autoprefixer \
+    bcrypt \
+    body-parser \
+    debug \
+    dotenv \
+    ejs \
+    express \
+    express-session \
+    method-override \
+    mongoose \
+    postcss \
+    postcss-cli \
     tailwindcss
 ```
