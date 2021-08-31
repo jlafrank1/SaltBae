@@ -29,3 +29,27 @@ GA726 08-2021
 ---
 ## Inspiration Credits:
 - [pomofocus](https://pomofocus.io/)
+
+
+
+# Node Configuration
+*for m1 mac desktop environments*
+
+```sh
+npm init
+npm install 
+    tailwindcss 
+    autoprefixer 
+    bcrypt 
+    body-parser 
+    debug 
+    dotenv 
+    ejs 
+    express 
+    express-session 
+    method-override 
+    mongoose 
+    postcss 
+    postcss-cli 
+    tailwindcss
+```
