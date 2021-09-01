@@ -28,7 +28,7 @@ h2 {
 .header {
     @apply flex flex-row items-center justify-between h-12 px-2;
     @apply lg:min-w-0 lg:w-1/2 lg:mx-auto mt-8;
-    @apply text-gray-50 bg-blue-600 bg-opacity-30 border border-blue-900 font-bold;
+    @apply text-gray-50 bg-blue-400 bg-opacity-30 border border-blue-900 font-bold;
     @apply rounded-lg shadow-lg drop-shadow-lg;
     animation-name: fadeIn;
     animation-duration: 1s;
@@ -45,8 +45,8 @@ a.header-link {
 }
 .container {
     @apply flex flex-col flex-nowrap min-w-full items-center justify-items-center;
-    @apply lg:min-w-0 lg:w-1/2 lg:mx-auto mt-8;
-    @apply text-gray-50 bg-blue-600 bg-opacity-30 border border-blue-900;
+    @apply lg:min-w-0 lg:w-1/2 lg:mx-auto mt-8 px-4;
+    @apply text-gray-50 bg-blue-400 bg-opacity-30 border border-blue-900;
     @apply rounded-lg shadow-lg drop-shadow-lg;
 
     animation-name: fadeIn;
@@ -58,7 +58,13 @@ a.header-link {
 
 .controls-container {
     /* border: 1px solid red; */
-    @apply flex flex-row items-center justify-center w-full mt-3;
+    @apply flex flex-row items-center justify-center w-full mt-3 mb-3;
+}
+.controls-right {
+    @apply flex flex-row items-center;
+}
+.controls-right > a {
+    @apply ml-2;
 }
 
 .controls-container > * {
@@ -113,7 +119,7 @@ input.task-button {
 }
 
 input[type="submit"].delete-button {
-    @apply py-0.5
+    @apply py-1 px-2 bg-blue-700 text-blue-50 font-bold hover:bg-indigo-500 ;
 }
 
 li {
@@ -155,7 +161,38 @@ input[type="checkbox"].edit-input {
     @apply mb-2;
 }
 
+.archive-card {
+    @apply rounded-lg bg-gray-50 px-2 py-2 text-black mb-4 w-full;
+    @apply shadow-xl;
+}
+.archive-card-data {
+    @apply flex flex-row;
+}
+.archive-card-timer {
+    @apply w-24 h-24 flex flex-row items-center justify-center rounded-lg bg-blue-900 text-gray-50;
+}
 
+.archive-card-timer > * {
+    @apply text-7xl;
+}
+.archive-card-info {
+    @apply ml-3;
+}
+
+.archive-card-name {
+    @apply text-xl font-bold;
+}
+
+.archive-card-timestamp {
+    @apply text-gray-400;
+}
+.archive-card-delete {
+    @apply flex flex-row justify-end;
+}
+
+.archive-card-comments {
+    @apply text-gray-600;
+}
 
 
 
