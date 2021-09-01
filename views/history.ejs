@@ -12,29 +12,53 @@
         <div class="header">
             <div>
                 <a class="header-link" href="/saltbae/"> Home </a>
-                <a class="header-link" href="/saltbae/archive"> Archive </a>
-
+                <a class="header-link" href="/saltbae/history"> Archive </a>
+        
             </div>
-            Hi, <%=currentUser.userName%>
+            <div class="controls-right">
+                <%=currentUser.userName%> <a href="/saltbae/logout"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+</svg></a>
+            </div>
         </div>
-    </div>
 <div class="container">
     <h1>Projects History</h1>
     <ul class="projects-list">
         <% projects.forEach(project => { %>
-        <li>
-            <div>
-            <a class="project-title" href="/saltbae/<%=project._id%>"><%= project.name%></a>
-                <div font-size="14px">Created on <%=project.createdAt%></div>
-                <p>Useful? <% if (project.interview.useful === true){%> ✅ <%} else {%> ❌ <%}%> </p>
-                <p>Interrupted? <% if (project.interview.interrupted === true){%> ✅ <%} else {%> ❌ <%}%> </p>
-                <p>Comments: <%=project.interview.comments%>
-                <form class="delete-form" method="POST" action="/saltbae/<%=project._id%>?_method=DELETE">
-                <input type="submit" value="DELETE" class="delete-button" />
-                </form>
-                <br>
+   
+
+            <div class="archive-card">
+
+                <div class="archive-card-data">
+                    <div class="archive-card-timer">
+                        <span><%=project.timer%></span>
+                    </div>
+                    <div class="archive-card-info">
+                        <a class="archive-card-name" href="/saltbae/<%=project._id%>">
+                            <%= project.name%>
+                        </a> <br>
+
+                        <div class="archive-card-timestamp">Created on <%=project.createdAt%></div>
+
+                        <p>Useful? <% if (project.interview.useful===true){%> ✅ <%} else {%> ❌ <%}%>
+                        </p>
+                        <p>Interrupted? <% if (project.interview.interrupted===true){%> ✅ <%} else {%> ❌ <%}%>
+                        </p>
+                        <p>Comments:</p><p class="archive-card-comments"><%=project.interview.comments%> </p>
+                    </div>
+
+
+                </div>
+
+                                    <div class="archive-card-delete">
+                                        <form class="delete-form" method="POST" action="/saltbae/<%=project._id%>?_method=DELETE">
+                                            <input type="submit" value="DELETE" class="delete-button" />
+                                        </form>
+                                    </div>
+
             </div>
-        </li>
+        
+     
         <% }) %>
     </ul>
 
