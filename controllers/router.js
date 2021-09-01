@@ -8,7 +8,9 @@ const User = require('../models/User');
 
 //ROUTES//
 
-//INDEX
+// Get routes
+
+// Home
 
 router.get('/', (req,res)=>{
 let currentUser = req.session.currentUser
@@ -25,8 +27,22 @@ if (currentUser) {
   }
 })
 
+// Login
+
 router.get('/login', (req, res) => {
   res.render('login.ejs')
+})
+
+// Logout
+
+router.get('/logout', (req, res) => {
+  req.session.destroy(function (err) {
+    if (err) {
+      res.send(err)
+    } else {
+      res.redirect('/saltbae/login'); 
+    }
+   });
 })
 
 // History
@@ -45,8 +61,6 @@ router.get('/history', (req,res)=>{
     }
 })
 
-// NEW
-
 //Project
 router.get('/new', (req, res) => {
   let currentUser = req.session.currentUser
@@ -56,6 +70,33 @@ router.get('/new', (req, res) => {
 //User
 router.get('/register', (req, res) => {
   res.render('register.ejs')
+})
+
+// SHOW
+router.get('/:id', (req, res)=> {
+  let id = req.params.id
+  let currentUser = req.session.currentUser
+  Projects.findById(id, (err, foundProject)=>{
+    if(err){
+      res.send(err)
+    } else{
+      res.render('show.ejs', {project: foundProject, id: id, currentUser})
+    }
+  })
+})
+
+// Edit
+
+router.get('/:id/edit', (req, res)=>{
+  let id = req.params.id
+  Projects.findById(id, (err, foundProject)=>{
+    if (err) {
+      res.send(err)
+    } else {
+      let currentUser = req.session.currentUser
+      res.render('edit.ejs', {project: foundProject, currentUser })
+    }
+  })
 })
 
 // POST
@@ -93,6 +134,7 @@ router.post('/register', ( req, res )=> {
 })
 
 // Login
+
 router.post('/login', ( req, res )=> {
 
     User.findOne({userId: req.body.userId}, ((err, foundUser)=> {
@@ -115,18 +157,6 @@ router.post('/login', ( req, res )=> {
     }))
 })
 
-// SHOW
-router.get('/:id', (req, res)=> {
-  let id = req.params.id
-  let currentUser = req.session.currentUser
-  Projects.findById(id, (err, foundProject)=>{
-    if(err){
-      res.send(err)
-    } else{
-      res.render('show.ejs', {project: foundProject, id: id, currentUser})
-    }
-  })
-})
 
 // DELETE
 router.delete('/:id', (req, res) => {
@@ -139,20 +169,7 @@ router.delete('/:id', (req, res) => {
     })
 })
 
-// EDIT / Exit interview
-router.get('/:id/edit', (req, res)=>{
-  let id = req.params.id
-  Projects.findById(id, (err, foundProject)=>{
-    if (err) {
-      res.send(err)
-    } else {
-      let currentUser = req.session.currentUser
-      res.render('edit.ejs', {project: foundProject, currentUser })
-    }
-  })
-})
-
-// PUT / Exit interview submit
+// PUT
 router.put('/:id/interview', (req,res)=>{
   let id = req.params.id
   if (req.body.useful === 'on') {
