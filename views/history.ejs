@@ -34,10 +34,9 @@
                         <span><%=project.timer%></span>
                     </div>
                     <div class="archive-card-info">
-                        <a class="archive-card-name" href="/saltbae/<%=project._id%>">
+                        <a class="archive-card-name" href="/saltbae/<%=project._id%>/edit">
                             <%= project.name%>
                         </a> <br>
-
                         <div class="archive-card-timestamp">Created on <%=project.createdAt%></div>
 
                         <p>Useful? <% if (project.interview.useful===true){%> ✅ <%} else {%> ❌ <%}%>

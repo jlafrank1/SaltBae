@@ -30,6 +30,9 @@ app.use('/public', express.static(path.join(__dirname, 'public')))
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.urlencoded({extended: true}))
 app.use('/saltbae', projectsController);
+app.get('/', (req, res) => {
+  res.redirect('/saltbae')
+})
 app.listen(port, () => {
     console.log("App listening on port " + port)
 })

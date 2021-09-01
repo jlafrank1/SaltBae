@@ -6,9 +6,9 @@ const router = express.Router();
 const Projects = require('../models/projects.js')
 const User = require('../models/user.js');
 
-//ROUTES//
+// ROUTES //
 
-// Get routes
+// GET //
 
 // Home
 
@@ -65,7 +65,7 @@ router.get('/history', (req,res)=>{
     }
 })
 
-//Project
+// Project
 router.get('/new', (req, res) => {
   let currentUser = req.session.currentUser
 
@@ -75,7 +75,7 @@ router.get('/new', (req, res) => {
   res.render('new.ejs', {currentUser})
 })
 
-//User
+// Register
 router.get('/register', (req, res) => {
   res.render('register.ejs')
 })
@@ -102,15 +102,16 @@ router.get('/:id', (req, res)=> {
 
 router.get('/:id/edit', (req, res)=>{
   let id = req.params.id
+  let currentUser = req.session.currentUser
+
+  if(!currentUser) {
+    res.redirect('/saltbae/login');
+  }
   Projects.findById(id, (err, foundProject)=>{
     if (err) {
       res.send(err)
     } else {
-      let currentUser = req.session.currentUser
-      if(!currentUser) {
-        res.redirect('/saltbae/login');
-      }
-      res.render('edit.ejs', {project: foundProject, currentUser })
+      res.render('edit.ejs', {project: foundProject, currentUser: currentUser })
     }
   })
 })
@@ -131,6 +132,7 @@ router.post('/', (req,res) => {
 })
 
 //User
+
 router.post('/register', ( req, res )=> {
     const passwordHash = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
     const userDbEntry = {
@@ -173,8 +175,8 @@ router.post('/login', ( req, res )=> {
     }))
 })
 
+// DELETE //
 
-// DELETE
 router.delete('/:id', (req, res) => {
     Projects.deleteOne({_id: req.params.id}, (err) => {
       if (err) {
@@ -185,7 +187,8 @@ router.delete('/:id', (req, res) => {
     })
 })
 
-// PUT
+// PUT //
+
 router.put('/:id/interview', (req,res)=>{
   let id = req.params.id
   if (req.body.useful === 'on') {
