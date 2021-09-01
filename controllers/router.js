@@ -65,7 +65,7 @@ router.get('/history', (req,res)=>{
     }
 })
 
-// Project
+// New Timer
 router.get('/new', (req, res) => {
   let currentUser = req.session.currentUser
 
@@ -80,7 +80,8 @@ router.get('/register', (req, res) => {
   res.render('register.ejs')
 })
 
-// SHOW
+// Show
+
 router.get('/:id', (req, res)=> {
   let id = req.params.id
   let currentUser = req.session.currentUser
@@ -98,8 +99,6 @@ router.get('/:id', (req, res)=> {
   })
 })
 
-// Edit
-
 router.get('/:id/edit', (req, res)=>{
   let id = req.params.id
   let currentUser = req.session.currentUser
@@ -114,6 +113,11 @@ router.get('/:id/edit', (req, res)=>{
       res.render('edit.ejs', {project: foundProject, currentUser: currentUser })
     }
   })
+})
+
+// Global redirect
+router.get('/*', (req, res) => {
+  res.redirect('/saltbae')
 })
 
 // POST
