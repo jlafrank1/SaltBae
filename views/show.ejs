@@ -12,11 +12,11 @@
                 <a class="header-link" href="/saltbae/history"> Archive </a>
 
             </div>
-            Hi, <%=currentUser.userName%>
+            <%=currentUser.userId%> <a href="/saltbae/logout">Logout</a>
         </div>
       <div class="container">
 
-          <h2 id="time"></h2>
+          <h2 id="time"><%=project.timer%>:00</h2>
         <h1 class="project-name">
             <%=project.name%>
         </h1>
@@ -54,7 +54,7 @@
             setInterval(function () {
                 minutes = parseInt(timer / 60, 10);
                 seconds = parseInt(timer % 60, 10);
-                minutes = minutes < 10 ? "0" + minutes : minutes;
+                minutes = minutes < 10 ? minutes : minutes;
                 seconds = seconds < 10 ? "0" + seconds : seconds;
 
                 display.textContent = minutes + ":" + seconds;

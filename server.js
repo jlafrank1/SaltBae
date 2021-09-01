@@ -10,9 +10,10 @@ const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
 const projectsController = require('./controllers/router.js');
 const path = require('path');
+const DB_URL = process.env.DB_URL || 'mongodb://localhost/'+ `SaltBae`
 
-//MONGOOSE CONNECT
-mongoose.connect(process.env.MONGODBURI, { useNewUrlParser: true}, { useUnifiedTopology: true });
+// Connect to Mongo
+mongoose.connect(DB_URL ,  { useNewUrlParser: true, useUnifiedTopology: true })
 
 db.once('open', ()=> {
     console.log('Connected to mongo');
