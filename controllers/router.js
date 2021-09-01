@@ -48,6 +48,10 @@ router.get('/logout', (req, res) => {
 // History
 router.get('/history', (req,res)=>{
     let currentUser = req.session.currentUser
+         
+    if(!currentUser) {
+      res.redirect('/saltbae/login');
+    }
     if (currentUser) {
         Projects.find({user: currentUser._id}, (err, allProjects)=>{
             if(err){
@@ -64,6 +68,10 @@ router.get('/history', (req,res)=>{
 //Project
 router.get('/new', (req, res) => {
   let currentUser = req.session.currentUser
+      
+  if(!currentUser) {
+    res.redirect('/saltbae/login');
+  }
   res.render('new.ejs', {currentUser})
 })
 
@@ -76,6 +84,11 @@ router.get('/register', (req, res) => {
 router.get('/:id', (req, res)=> {
   let id = req.params.id
   let currentUser = req.session.currentUser
+        
+  if(!currentUser) {
+    res.redirect('/saltbae/login');
+  }
+
   Projects.findById(id, (err, foundProject)=>{
     if(err){
       res.send(err)
@@ -94,6 +107,9 @@ router.get('/:id/edit', (req, res)=>{
       res.send(err)
     } else {
       let currentUser = req.session.currentUser
+      if(!currentUser) {
+        res.redirect('/saltbae/login');
+      }
       res.render('edit.ejs', {project: foundProject, currentUser })
     }
   })
