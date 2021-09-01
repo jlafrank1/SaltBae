@@ -115,11 +115,6 @@ router.get('/:id/edit', (req, res)=>{
   })
 })
 
-// Global redirect
-router.get('/*', (req, res) => {
-  res.redirect('/saltbae')
-})
-
 // POST
 
 // Project
