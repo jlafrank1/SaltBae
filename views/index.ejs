@@ -1,52 +1,55 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>New</title>
-    <link rel="stylesheet" href="/public/styles/style.css">
-  </head>
-  <body>
-    <div class="header">
-      <div>
-        <a class="header-link" href="/saltbae/"> Home </a>
-        <a class="header-link" href="/saltbae/history"> Archive </a>
 
-      </div>
-      <div class="controls-right">
-      <%=currentUser.userName%> <a href="/saltbae/logout"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-</svg></a>
-      </div>
+<head>
+  <meta charset="utf-8">
+  <title>New</title>
+  <link rel="stylesheet" href="/public/styles/style.css">
+</head>
+
+<body>
+  <div class="header">
+    <div>
+      <a class="header-link" href="/saltbae/"> Home </a>
+      <a class="header-link" href="/saltbae/history"> Archive </a>
+
     </div>
-    <div class="container">
+    <div class="controls-right">
+      <%=currentUser.userName%> <a href="/saltbae/logout"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+        </svg></a>
+    </div>
+  </div>
+  <div class="container">
     <h1>New Timer: </h1>
     <div class="tasks">
-        <form action="/saltbae" method="post" class="new-project">
-          <input type="text" name="name" value="Pomodoro" hidden>
-          <input type="text" name="timer" value="25" hidden>
-          <input class="task-button" type="submit" value="Pomodoro (25m)" />
-        </form>
-        <form action="/saltbae" method="post" class="new-project">
-          <input type="text" name="name" value="Short Break" hidden>
-          <input type="text" name="timer" value="5" hidden>
-          <input class="task-button" type="submit" value="Short Break (5m)" />
-        </form>
-        <form action="/saltbae" method="post" class="new-project">
-          <input type="text" name="name" value="Long Break" hidden>
-          <input type="text" name="timer" value="15" hidden>
-          <input class="task-button" type="submit" value="Long Break (15m)" />
-        </form>
+      <form action="/saltbae" method="post" class="new-project">
+        <input type="text" name="name" value="Pomodoro" hidden>
+        <input type="text" name="timer" value="25" hidden>
+        <input class="task-button" type="submit" value="Pomodoro (25m)" />
+      </form>
+      <form action="/saltbae" method="post" class="new-project">
+        <input type="text" name="name" value="Short Break" hidden>
+        <input type="text" name="timer" value="5" hidden>
+        <input class="task-button" type="submit" value="Short Break (5m)" />
+      </form>
+      <form action="/saltbae" method="post" class="new-project">
+        <input type="text" name="name" value="Long Break" hidden>
+        <input type="text" name="timer" value="15" hidden>
+        <input class="task-button" type="submit" value="Long Break (15m)" />
+      </form>
     </div>
     <br>
+  </div>
+  <div class="container">
+    <br>
+    <h2 style="margin-bottom: 10px;">Using the Pomodoro Technique:</h2>
+    <p style="margin-left:5%; margin-right:5%;">The Pomodoro technique is designed to reduce mental strain by taking a short 5 minute break for every 25 minutes (or "Pomodoro") you are productive. After four full Pomodoro's, take a long 15-30 minute break.</p>
+    <p style="margin-left:5%; margin-right:5%;"> After a timer runs out (or you stop it manually), you will automatically be taken to a short questionnaire to reflect on the time spent. If you're ever interrupted during a Pomodoro, stop the timer and take your five minute break, starting over when you get back. Make a note of the interruption in the comment section, and reflect on how to avoid it in the future. </p>
+    <p style="margin-left:5%; margin-right:5%;"> Finally, you can go to the Archive page to look back on previous time spent, as well as edit comments or questions from previous questionnaires. </p>
+    <br>
+  </div>
 
-    </div>
-    <div class="container">
-      <br>
-      <h2>The Pomodoro Technique:</h2>
-      <br>
-      <p style="margin-left:8%; margin-right:8%; font-size:1em">The Pomodoro Technique is a time management method developed by Francesco Cirillo in the late 1980s. It uses a timer to break work into intervals, traditionally 25 minutes in length, separated by short breaks. Each interval is known as a pomodoro, from the Italian word for 'tomato', after the tomato-shaped kitchen timer Cirillo used as a university student.
-      The technique has been widely popularized by dozens of apps and websites providing timers and instructions. Closely related to concepts such as timeboxing and iterative and incremental development used in software design, the method has been adopted in pair programming contexts.</p>
-      <br>
-    </div>
-  </body>
+</body>
+
 </html>

@@ -204,7 +204,7 @@ router.put('/:id/interview', (req,res)=>{
         if(err){
             res.send(err)
         }else {
-            res.redirect('/saltbae/history')
+            res.redirect('/saltbae/')
         }
     })
 })
